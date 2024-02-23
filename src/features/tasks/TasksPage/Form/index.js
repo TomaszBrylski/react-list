@@ -8,20 +8,18 @@ import Input from "../../Input";
 const Form = () => {
   const [newTaskContent, setNewTaskContent] = useState("");
   const inputRef = useRef(null);
-
   const dispatch = useDispatch();
 
-  const onFormSubmit = (event) => {
-    event.preventDefault();
+    const onFormSubmit = (event) => {
+      event.preventDefault();
 
-    const trimmedNewTaskContent = newTaskContent.trim();
-
-    if (!trimmedNewTaskContent) {
+    if (newTaskContent.trim() === "") {
       return;
     }
 
-    dispatch(addTask({
-        content: trimmedNewTaskContent,
+    dispatch(
+      addTask({
+        content: newTaskContent.trim(),
         done: false,
         id: nanoid(),
       })
@@ -39,7 +37,7 @@ const Form = () => {
         placeholder="What is there to do?"
         onChange={({ target }) => setNewTaskContent(target.value)}
       />
-      <Button className="form__button">Add task</Button>
+      <Button>Add task</Button>
     </StyledForm>
   );
 };
