@@ -28,13 +28,19 @@ https://tomaszbrylski.github.io/ToDo-List-react/
 - CSS Grid
 - CSS Flex
 - BEM
+- Webpack,
 - Normalize.css
+- setInterval
 - Styled Components
+- State
 - Media Queries
-- Redux
-- Redux Toolkit
+- Redux (Toolkit, Saga, Router)
+- Effect and Ref hooks
 - ScreenToGit
-- MidJourney 
+- MidJourney
+- API request
+- Axion
+- async | await
 
 # Getting Started with Create React App
 
