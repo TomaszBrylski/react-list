@@ -19,12 +19,13 @@ const Buttons = () => {
     <Wrapper>
       {!areTasksEmpty && (
         <>
-          <Button onClick={() => dispatch(toggleHideDone())}>
+          <Button onClick={() => dispatch(toggleHideDone())} hidden={isEveryTaskDone}>
             {hideDone ? "Show" : "Hide"} tasks done
           </Button>
           <Button
             onClick={() => dispatch(setAllDone())}
             disabled={isEveryTaskDone}
+            hidden={isEveryTaskDone}
           >
             Mark all tasks as done
           </Button>
