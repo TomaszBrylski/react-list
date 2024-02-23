@@ -7,21 +7,16 @@ import {
   selectAreTasksEmpty,
   selectHideDone,
   selectIsEveryTaskDone,
-  fetchExampleTasks,
 } from "../../tasksSlice";
 
 const Buttons = () => {
-  const areTasksEmpty = useSelector(selectAreTasksEmpty);
-  const isEveryTaskDone = useSelector(selectIsEveryTaskDone);
   const hideDone = useSelector(selectHideDone);
-
-  const dispatch = useDispatch(fetchExampleTasks);
+  const isEveryTaskDone = useSelector(selectIsEveryTaskDone);
+  const areTasksEmpty = useSelector(selectAreTasksEmpty);
+  const dispatch = useDispatch();
 
   return (
     <Wrapper>
-      <Button onClick={() => dispatch(fetchExampleTasks())}>
-        Get example tasks
-      </Button>
       {!areTasksEmpty && (
         <>
           <Button onClick={() => dispatch(toggleHideDone())}>
