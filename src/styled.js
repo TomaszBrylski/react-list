@@ -1,11 +1,11 @@
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 const activClassName = "active";
-
-export const StyledNavLink = styled(NavLink).attrs(() => ({
+ 
+export const StyledLink = styled(NavLink).attrs(()=> ({
     activClassName,
 }))`
-  &.${activClassName} {
-    color: red;
-  }
+    &.${activClassName} {
+        color: teal;
+    }
 `;
