@@ -9,8 +9,8 @@ export const FetchExampleTasksButton = () => {
   return (
     <>
       <Button 
-      disabled={loading} 
-      onClick={() => dispatch(fetchExampleTasks())}
+        loading={loading} 
+        onClick={() => dispatch(fetchExampleTasks())}
       >
         {loading === true ? "Loading..." : "Get example tasks"}
       </Button>

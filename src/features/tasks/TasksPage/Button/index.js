@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledButton = styled.button`
   background: transparent;
@@ -20,14 +20,13 @@ const StyledButton = styled.button`
     filter: brightness(120%);
   }
 
-  &:disabled,
-  &[hidden] { 
-    opacity: 0;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
+  ${({ loading }) =>
+    loading &&
+    css`
+      cursor: progress;
+      pointer-events: none;
+      opacity: 0.6;
+    `}
 `;
 
 export default StyledButton;
-
-
