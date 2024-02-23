@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const List = styled.ul`
   list-style: none;
@@ -20,12 +21,12 @@ export const Item = styled.li`
 `;
 
 export const Content = styled.span`
-    ${({ done }) => done && css`
+    ${({ $done }) => $done && css`
         text-decoration: line-through;
     `}
 `;
 
-export const StyledLink = styled.link`
+export const StyledLink = styled(NavLink)`
   color: ${({ theme }) => theme.color.teal};
   text-decoration: none;
 
@@ -47,11 +48,11 @@ export const Button = styled.button`
   padding: 0px;
   transition: filter 0.3s;
 
-  ${({toggleDone}) => toggleDone && css`
+  ${({$toggleDone}) => $toggleDone && css`
     background: ${({ theme }) => theme.color.forestGreen};
   `}
 
-  ${({remove}) => remove && css`
+  ${({$remove}) => $remove && css`
     background: crimson;
   `}
 
