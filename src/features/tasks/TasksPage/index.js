@@ -3,16 +3,17 @@ import TaskList from "./TaskList";
 import Buttons from "./Buttons";
 import Section from "../../../common/Section";
 import Header from "../../../common/Header";
-import { Container } from "../../../common/Container/styled";
 import Search from "./Search";
+import { FetchExampleTasksButton } from "./FetchExampleTasksButton";
 
 function TasksPage() {
   return (
-    <Container>
+    <>
       <Header title="Task List" />
       <Section 
         title="Add a new task" 
-        body={<Form />} />
+        body={<Form />}
+        extraHeaderContent={<FetchExampleTasksButton/>}/>
        
       <Section 
         title="Search in" 
@@ -23,7 +24,7 @@ function TasksPage() {
         body={<TaskList />}
         extraHeaderContent={<Buttons />}
       />
-    </Container>
+    </>
   );
 }
 
