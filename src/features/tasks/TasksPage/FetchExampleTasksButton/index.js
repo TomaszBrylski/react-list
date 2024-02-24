@@ -8,12 +8,12 @@ export const FetchExampleTasksButton = () => {
 
   return (
     <>
-      <Button 
-        loading={loading} 
-        onClick={() => dispatch(fetchExampleTasks())}
-      >
-        {loading === true ? "Loading..." : "Get example tasks"}
-      </Button>
+    <Button 
+  loading={loading ? "true" : undefined} 
+  onClick={() => dispatch(fetchExampleTasks())}
+>
+  {loading === true ? "Loading..." : "Get example tasks"}
+</Button>
     </>
   );
 };
